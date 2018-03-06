@@ -27,7 +27,7 @@ myEl.addEventListener('click', function () {
 
     Autodesk.Viewing.Initializer(options, function onInitialized() {
         Autodesk.Viewing.Document.load(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
-        viewer.loadModel();
+        // viewer.loadModel();
     });
 });
 
@@ -37,7 +37,7 @@ myE2.addEventListener('click', function () {
 
     Autodesk.Viewing.Initializer(options, function onInitialized() {
         Autodesk.Viewing.Document.load(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
-        viewer.loadModel();
+        // viewer.loadModel();
     });
 });
 
@@ -46,7 +46,7 @@ myE3.addEventListener('click', function () {
     documentId = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bW9kZWwyMDE4LTAzLTA2LTE1LTI3LTMyLWQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0MjdlL0NoYWlyLmR3Zw';
     Autodesk.Viewing.Initializer(options, function onInitialized() {
         Autodesk.Viewing.Document.load(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
-        viewer.loadModel();
+        // viewer.loadModel();
     });
 });
 
@@ -90,14 +90,14 @@ function onDocumentLoadSuccess(doc) {
     loadModel();
 }
 
-function loadModel() {
-    var initialViewable = viewables[indexViewable];
-    var svfUrl = lmvDoc.getViewablePath(initialViewable);
-    var modelOptions = {
-        sharedPropertyDbPath: lmvDoc.getPropertyDbPath()
-    };
-    viewer.loadModel(svfUrl, modelOptions, onLoadModelSuccess, onLoadModelError);
-}
+// function loadModel() {
+//     var initialViewable = viewables[indexViewable];
+//     var svfUrl = lmvDoc.getViewablePath(initialViewable);
+//     var modelOptions = {
+//         sharedPropertyDbPath: lmvDoc.getPropertyDbPath()
+//     };
+//     viewer.loadModel(svfUrl, modelOptions, onLoadModelSuccess, onLoadModelError);
+// }
 
 /**
  * Autodesk.Viewing.Document.load() failuire callback.
