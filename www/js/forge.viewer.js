@@ -9,7 +9,7 @@ var indexViewable;
 //         var accessToken = 'eyJhbGciOiJIUzI1NiIsImtpZCI6Imp3dF9zeW1tZXRyaWNfa2V5In0.eyJjbGllbnRfaWQiOiI5OEdCaHZvQnowTVM5cmhlUmQxcU15Zk1HakJDZm1QNiIsImV4cCI6MTUxOTg5NTk0MCwic2NvcGUiOlsiZGF0YTpyZWFkIiwiZGF0YTp3cml0ZSIsImRhdGE6Y3JlYXRlIiwiYnVja2V0OmNyZWF0ZSIsImJ1Y2tldDpyZWFkIl0sImF1ZCI6Imh0dHBzOi8vYXV0b2Rlc2suY29tL2F1ZC9qd3RleHA2MCIsImp0aSI6IlYzemJYelcwN1VCeXNaVTRHMjJOcGlGWEZPU0diU2tiS01hZ1I2a1ExNzdlSWdRSFNJd3pDcHBRY2JhT0E0TWQifQ.OLc4fTjHS4RIiQm-xRweJDcsK-9oje0whXgP_caVdEI';
 //         var expireTimeSeconds = 86400000000000000000;
 //         onGetAccessToken(accessToken, expireTimeSeconds);
-        
+
 
 //     }
 // };
@@ -17,7 +17,7 @@ var indexViewable;
 var options = {
     env: 'AutodeskProduction',
     getAccessToken: getForgeToken
-};
+}
 
 var documentId;
 
@@ -62,7 +62,10 @@ myE3.addEventListener('click', function () {
 function onDocumentLoadSuccess(doc) {
 
     // A document contains references to 3D and 2D viewables.
-    viewables = Autodesk.Viewing.Document.getSubItemsWithProperties(doc.getRootItem(), { 'type': 'geometry' }, true);
+    viewables = Autodesk.Viewing.Document.getSubItemsWithProperties(doc.getRootItem(), {
+        'type': 'geometry',
+        'role': '3d'
+    }, true);
     if (viewables.length === 0) {
         console.error('Document contains no viewables.');
         return;
